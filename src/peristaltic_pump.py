@@ -58,17 +58,19 @@ def hex2int(comand):
 
 
 class LongerPump():
-    def __init__(self,
-                 com_port: str,
-                 address: int,
-                 tube_ID: float = 3.2,
-                 baudrate: int = 1200,
-                 parity=serial.PARITY_EVEN,
-                 stopbits=serial.STOPBITS_ONE,
-                 bytesize=serial.EIGHTBITS,
-                 timeout: float = 0.2,
-                 direction: bool = True,
-                 top_speed: int = 100):
+    def __init__(
+            self,
+            com_port: str,
+            address: int,
+            tube_ID: float = 3.2,
+            baudrate: int = 1200,
+            parity=serial.PARITY_EVEN,
+            stopbits=serial.STOPBITS_ONE,
+            bytesize=serial.EIGHTBITS,
+            timeout: float = 0.2,
+            direction: bool = True,
+            top_speed: int = 100
+    ):
         self.com_port = com_port
         self.address = address
         self.tube_ID = tube_ID

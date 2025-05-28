@@ -1,11 +1,9 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
- 
 import sys
 import serial
 import binascii
 
-def func_send(input_send,ser):
+
+def func_send(input_send, ser):
         try:
                 ser.read() #Para comprobar que el puerto esta abierto.
         except:
