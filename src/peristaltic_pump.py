@@ -1,11 +1,5 @@
-"""
-Authors: 
-Adrián Pinilla Sánchez
-Yang Cao
-"""
-
-from .pyICFOserial_v2a import *
-
+from pyICFOserial_v2a import *
+import serial
 
 def hex2complement(number, ty=4):
     if ty == 4:
@@ -188,4 +182,19 @@ class LongerPump():
             print('Pump address has been changed to: ', self.address)
 
 
+if __name__ == "__main__":
 
+    pump = LongerPump(com_port='COM4', address=2, top_speed=100, baudrate=9600)
+    try:
+        pump.openport()
+        pump.run(speed=50, direction=True)
+        print("Pump state:", pump.get_state())
+        pump.stop()
+        print("Pump state after stopping:", pump.get_state())
+        pump.get_address()
+        pump.change_address(2)
+        print("New address:", pump.address)
+    except Exception as e:
+        print(f"Error: {e}")
+    finally:
+        pump.closeport()

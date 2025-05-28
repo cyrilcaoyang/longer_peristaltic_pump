@@ -1,1 +1,1 @@
-from .peristaltic_pump import LongerPump
+from peristaltic_pump import LongerPump
